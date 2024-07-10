@@ -1,0 +1,43 @@
+
+.footer{
+    height: auto;
+    background-color: #f4f4f4;
+}
+
+.footerCategories{
+    display: grid;
+    width: 500px;
+    grid-template: 100% / 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 0 16px 0 16px;
+}
+
+.footerCategories h3{
+    font-weight: bold;
+    margin: 16px 0 16px 0;
+}
+
+.footerCategories ul li{
+    padding-bottom: 8px;
+}
+
+.footerCategories a {
+    cursor: pointer;
+}
+
+.footerCategories a:hover {
+    text-decoration: underline;
+}
+
+.footerCopyright{
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    align-items: center;
+    background-color: #6d6c70;
+}
+
+.footerCopyright p{
+    font-weight: bold;
+    padding: 0 16px 0 16px;
+}

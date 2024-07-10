@@ -1,0 +1,16 @@
+.productCardContainer{
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+}
+
+.card-context {
+    position: relative;
+    display: flex;
+    transition: left .2s linear;
+}
+
+.card-context img {
+    display: block;
+    width: 300px;
+}

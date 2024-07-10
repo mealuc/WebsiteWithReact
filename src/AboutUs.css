@@ -1,0 +1,49 @@
+.infoCardContainer{
+    display: flex;
+    max-width: 1640px;
+    margin: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+ }
+ 
+ .infoCard{
+     box-sizing: border-box;
+     padding: 1rem;
+     max-width: 368px;
+     border-radius: 1rem;
+     border: 1px solid;   
+     cursor: pointer;
+     overflow: visible;
+ }
+ 
+ .infoCard h2, p{
+     display: flex;
+ }
+ 
+ .infoCardImage img{
+     width: 100%;
+     height: auto;
+ }
+ 
+ .infoCard:hover .cardButton{   
+     opacity: 1;
+     visibility: visible;
+ }
+ 
+ .cardButton {
+     opacity: 0;
+     transition: 0.3s linear;
+     visibility: hidden;
+     margin:  0px -1rem -1rem -1rem;
+     font-size: 1.2rem;
+     display: flex;
+     font-weight: bold;
+     align-content: center;
+     justify-content: center;
+     color: white;
+     border-radius: 0 0 1rem 1rem;
+     background-color: black;
+     align-items: center;
+     height: 2.5rem;
+ }
