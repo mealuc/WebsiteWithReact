@@ -1,22 +1,22 @@
 .slideContainer {
+    margin-bottom: 1rem;  
     position: relative;
-    max-width: 1920px;
-    max-height: 1080px;
-    margin-bottom: 1rem;
     overflow: hidden;
+}
+
+.slideContext {
+    display: flex;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    flex: 1 0 100%;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
-}
-
-.slide {
-    display: none;
-}
-
-.slide.active {
-    display: block;
 }
 
 .arrows {
@@ -27,7 +27,7 @@
     top: calc(50% - 32px);
     background-color: #97A3B8;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .arrows:hover {
@@ -53,10 +53,32 @@
     border-radius: 10px;
 }
 
-.slideDescription {
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     position: absolute;
-    bottom: 0;
-    background-color: wheat;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10px;
+    z-index: 2;
+}
+
+.paginationContainer li {
+    cursor: pointer;
+}
+
+.paginationInput {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: transparent;
+    border: solid 2px white;
+    cursor: pointer;
+    transition: 0.1s linear;
+    outline: none ;
+}
+
+.paginationInput.focused {
+    background-color: white;
+    box-shadow: 0 0 0 2px teal, 0 0 18px white;
 }
