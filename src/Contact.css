@@ -14,7 +14,7 @@
     border: solid;
 }
 
-.registerForm input{
+.contactFormInput{
     margin: 0.5rem 0;
     padding: 0.5rem;
     border-radius: 10px;
@@ -34,4 +34,10 @@
     width: 50%;
     cursor: pointer;
     align-self: end;
+}
+
+.contactFormImageLoad {
+    cursor: pointer;
+    display: flex;
+    width: auto; 
 }

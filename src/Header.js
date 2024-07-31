@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './Header.css';
 import logo from './resources/dentaplazaicon.jpg';
 import cities from './resources/cities.json'
@@ -6,22 +6,31 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     //Search Autocomplete 
-    const [cityData, setCityData] = useState([]);
+    const [filteredCityData, setFilteredCityData] = useState([]);
+    const [cityData, setCityData] = useState(null);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/getCities")
+          .then(response => response.json())
+          .then(data => {setCityData(data)})
+          .catch(e => {
+            console.log("Error occured when fetching city data =>", e);
+          });
+      }, []);
+
     const searchInputRef = useRef(null);
     var filteredData;
-    
     function searchResult(data) {
         if (data && data.length >= 3) {
-            filteredData = [...Object.values(cities)].filter((city) => {
+            filteredData = Object.values(cityData[0]).filter((city) => {
                 return city.toLocaleUpperCase('TR').includes(data.toLocaleUpperCase('TR'))
             });
-            setCityData(filteredData);
+            setFilteredCityData(filteredData);
         }
         else {
-            setCityData([]);
+            setFilteredCityData([]);
         }
     }
-
     return (
         <header className='header'>
             <div className="logo">
@@ -53,10 +62,10 @@ function Header() {
                 </div>
                 <div className="resultBox">
                     <ul>
-                        {cityData.map((data, index) => {
+                        {filteredCityData.map((data, index) => {
                             return <li key={index} onClick={() => {
                                 searchInputRef.current.value = data
-                                setCityData([]);
+                                setFilteredCityData([]);
                             }
                             }>{data}</li>
                         })}
