@@ -30,14 +30,28 @@
     font-size: 12px;
 }
 
+.registerForm input[type=button]{
+    cursor: pointer;
+}
+
 .registerForm input[type=submit]{
     width: 50%;
-    cursor: pointer;
     align-self: end;
+    cursor: pointer;
 }
 
 .contactFormImageLoad {
     cursor: pointer;
     display: flex;
     width: auto; 
+}
+
+.uploadedImages{
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+}
+
+.imageContainer{
+     display: flex;
 }
