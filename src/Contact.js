@@ -134,7 +134,7 @@ function Contact() {
                         {imageCollection && imageCollection.length > 0 ? (
                             imageCollection.map((image) => {
                                 return (
-                                    <div key={image.filename}>
+                                    <div key={image.imageId}>
                                         <img src={image.image} alt={image.filename} className="uploadedImages" />
                                     </div>
                                 )

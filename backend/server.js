@@ -69,7 +69,8 @@ app.get('/getImages', async (req, res) => {
                     res({
                         filename: data.filename,
                         contentType: data.contentType,
-                        image: `data:${data.contentType};base64,${base64Image}`
+                        image: `data:${data.contentType};base64,${base64Image}`,
+                        imageId: data._id
                     });
                 });
             });
